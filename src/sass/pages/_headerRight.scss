@@ -1,0 +1,122 @@
+@use '../abstracts/colors' as c;
+@use '../abstracts/fonts' as f;
+.container-right {
+    background-color: c.$color-primary;
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    grid-row-gap: 2rem;
+}
+
+.flexbox-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border: solid 2.5px c.$color-secondary;
+    outline: 1.5px solid c.$color-secondary;
+    outline-offset: -12px;
+    padding: 1rem;
+    margin: 0;
+}
+
+
+.brand-container {
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-rows: repeat(3, min-content);
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    grid-row-gap: 4rem;
+
+
+    .logo {
+        grid-column: 1/-1;
+        grid-row: 1 / span 1;
+        display: grid;
+        align-items: center;
+        max-height: min-content;
+        width: auto;
+        z-index: 1000;
+    
+        img {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 22rem;
+            width: 100%;
+        }
+    }
+
+    .header-btn-one {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 1rem;
+        border: solid 1px c.$color-secondary;
+        background-color: c.$color-primary;
+        width: 100%;
+        height: min-content;
+       
+
+       i {
+            font-size: f.$font-size-large;
+            margin-right: 1rem;
+            color: c.$color-secondary;
+        }
+
+        a {
+            font-size: f.$font-size-large *1.2;
+            font-weight: f.$font-weight-normal-plus;
+            color: c.$color-secondary;
+            letter-spacing: 2px;
+        }
+
+      
+    }
+    .header-btn-two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 1rem;
+        border: solid 1px c.$color-secondary;
+        background-color: c.$color-primary;
+        width: min-content;
+        height: min-content;
+       
+
+       i {
+            font-size: f.$font-size-large;
+            color: c.$color-secondary;
+            margin-right: 1rem;
+            margin-top: .4rem;
+            padding-bottom: .2rem;
+        }
+
+        a {
+            font-size: f.$font-size-large *1.2;
+            font-weight: f.$font-weight-normal-plus;
+            color: c.$color-secondary;
+            letter-spacing: 2px;
+        }
+
+      
+    }
+  
+}
+
+
+

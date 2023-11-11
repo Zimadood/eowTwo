@@ -1,0 +1,10 @@
+Gulp Project completed.
+My Gulp is constructed to minify css and have a separate
+task for expanded css.
+
+index.html file is set to opperate from the scss folder
+The GulpFile is outside of the src and other folders.
+
+NOTE 'del npm' is downgraded to 6.1.1
+
+& imagemin.js is version 7.1.0

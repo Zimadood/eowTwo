@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/**
+ * @license
+ * MyFonts Webfont Build ID 4291287, 2022-01-10T04:41:28-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: BettermindSignature by Din Studio
+ * URL: https://www.myfonts.com/fonts/din-studio/bettermind-signature/regular/
+ * Copyright: Bettermind Signature © Din Studio. 2020. All Rights Reserved
+ * 
+ * Webfont: Le Mores Collection Script-Reg by Great Studio
+ * URL: https://www.myfonts.com/fonts/great-studio/le-more-collection/script-regular/
+ * Copyright: Copyright (c) 2020 by Great Studio. All rights reserved.
+ * 
+ * Webfont: LE MORES COLLECTION SERIF-Reg by Great Studio
+ * URL: https://www.myfonts.com/fonts/great-studio/le-more-collection/serif-regular/
+ * Copyright: Copyright (c) 2020 by Great Studio. All rights reserved.
+ * 
+ * 
+ * 
+ * © 2022 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/417ad7");
+@font-face {
+  font-family: "fontDisplay";
+  src: url("./fonts/fontDisplay/font.woff2") format("woff2"), url("./fontDisplay/font.woff") format("woff");
+}
+@font-face {
+  font-family: "fontHeadline";
+  src: url("./fonts/fontHeadline/font.woff2") format("woff2"), url("./fontHeadline/font.woff") format("woff");
+}
+@font-face {
+  font-family: "fontScript";
+  src: url("./fonts/fontScript/font.woff2") format("woff2"), url("./fontScript/font.woff") format("woff");
+}
+/*# sourceMappingURL=MyFontsWebfontsKit.css.map */
+
+/*Fonts*/
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Courier Prime', monospace;
+$font-headline: 'fontHeadline';
+$font-display: 'fontDisplay';
+$font-script: 'fontScript';
+
+/*Font Sizes*/
+$font-size-small: .8rem;
+$font-size-medium: 1rem;
+$font-size-normal: 1.1rem;
+$font-size-normal-plus: 1.5rem;
+$font-size-large: 1.8rem;
+$font-size-xl: 2rem;
+
+/*Font Weights*/
+$font-weight-light: 100;
+$font-weight-normal: 300;
+$font-weight-normal-plus: 400;
+$font-weight-bold: 500;
+$font-weight-heavy: 700;
