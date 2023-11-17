@@ -124,22 +124,26 @@ html {
 
         }
 */
+/*Checked OK*/
 .sidebar {
   position: relative;
   grid-column: 1/2;
   grid-row-start: 1;
   grid-row-end: -1;
   background-color: #ccc67c;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   align-content: center;
+  height: 100%;
+  width: 8rem;
 }
 
+/*Checked OK*/
 .sidebar-border {
   position: fixed;
   top: 0;
-  height: 100%;
+  height: 100vh;
   width: 8rem;
   border: solid 3.5px #000010;
   outline: 2px solid #000010;
@@ -148,25 +152,7 @@ html {
   margin: 0;
 }
 
-.navbar {
-  height: 100%;
-  background: #ccc67c;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  transition: delay 3s ease-in-out;
-  -webkit-transition: delay 3s ease-in-out;
-  -moz-transition: delay 3s ease-in-out;
-}
-
-.change {
-  left: 0;
-}
-
+/*Checked HAPPY With this HAMBURGER code*/
 .hamburger-menu {
   width: 55px;
   height: 55px;
@@ -219,18 +205,25 @@ html {
   background-color: #ccc67c;
 }
 
+/*Checked HAPPY With this HAMBURGER code*/
+/*Navbar Contents incl Links Position Animation and Styles*/
+.navbar {
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
+  grid-template-rows: repeat(6, minmax(1.8rem, min-content));
+  height: 100vh;
+}
+
 .nav-content {
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
+  grid-template-rows: repeat(6, minmax(1.8rem, min-content));
   background-color: #ccc67c;
-  grid-column: 2/3;
   position: fixed;
   top: 35px;
   left: -16rem;
-  display: grid;
-  grid-template-columns: 1fr minmax(16rem, min-content) 1fr;
-  grid-auto-rows: minmax(1.8rem, min-content);
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
   transition: transform 0.8s ease-in-out;
@@ -242,10 +235,21 @@ html {
 
 .change .nav-content {
   top: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-rows: repeat(6, minmax(1.8rem, min-content));
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   height: 100%;
-  width: 15vw;
+  width: 13vw;
   position: absolute;
   left: 0;
+  border: solid 3.5px #000010;
+  outline: 2px solid #000010;
+  outline-offset: -10px;
+  padding: 1rem;
+  margin: 0;
   z-index: 100;
   transform: translateX(0);
   transition: transform 0.8s ease-in-out;
@@ -257,34 +261,24 @@ html {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
-  border: solid 3.5px #000010;
-  outline: 2px solid #000010;
-  outline-offset: -10px;
-  padding: 1rem;
-  margin: 0;
-}
-
-.header, .nav-list-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .nav-list {
-  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-rows: repeat(6, 1fr);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem 1rem 1rem 0;
   min-width: min-content;
   position: absolute;
-  top: 12rem;
+  top: 15rem;
+  height: 45vh;
   margin: 10% 30% auto 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   text-align: left;
   list-style: none;
-  z-index: 400;
+  z-index: 10400;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s;
@@ -299,17 +293,71 @@ html {
   visibility: visible;
 }
 
-.header .nav-list-container li a {
+.nav-list-container li a {
   color: #000010;
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.16rem;
+  font-weight: 400;
   letter-spacing: 3px;
   list-style: none;
   text-decoration: none;
 }
 
 /*Animated Nav List Buttons*/
+/*
+.second-nav {
+    grid-column: 2 / 10;
+    grid-row: 3 / 4;
+    border-top: .1rem solid #12376e;
+    border-bottom: .1rem solid #12376e;
+}
+
+.second-nav-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    list-style: none;
+}
+
+.second-nav-link {
+    text-align: center;
+    display: grid;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #12376e;
+    padding: .8rem 0;
+    transition: all .5s .3s;
+}
+
+.second-nav-item:hover .second-nav-link {
+    background-color: #12376e;
+    color: #fff;
+}
+
+.second-nav-link::before,
+.second-nav-link::after {
+    content: "";
+    width: 0;
+    height: .1rem;
+    background-color: #12376e;
+    display: block;
+    transition: width .3s cubic-bezier(.55, 0, .98, .54), background-color .5s .3s;
+}
+
+.second-nav-link::after {
+    justify-self: end;
+}
+
+.second-nav-item:hover .second-nav-link::before,
+.second-nav-item:hover .second-nav-link::after {
+    width: 100%;
+    background-color: #fff;
+}
+
+.second-nav-item:first-child {
+    position: relative;
+}
+*/
 /* Slider Header Left Start*/
 .container-left {
   grid-column: full-start/col-end 6;
@@ -322,7 +370,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -99;
+  /* IN THE END */
 }
 
 .slide {

@@ -8,3 +8,10 @@ The GulpFile is outside of the src and other folders.
 NOTE 'del npm' is downgraded to 6.1.1
 
 & imagemin.js is version 7.1.0
+*********************************************
+Tuesday 14th november.
+
+Disaster recovery major distraction (Acccountant telephoned and navbar links styling was lost.
+I should have paid more attention to what I was doing and packed up by then.
+moral of story: "Effective backups works no matter how small the the projects you do change or are updated."
+***********************************************
