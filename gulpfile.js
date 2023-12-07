@@ -116,7 +116,7 @@ function watch() {
     server: {
       baseDir: "dist"
     },
-    browser: "firefox"
+    browser: "chrome"
   });
 
   gulp

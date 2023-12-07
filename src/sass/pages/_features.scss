@@ -1,5 +1,6 @@
-@use 'abstracts/colors' as c;
-@use 'abstracts/fonts' as f;
+@use '../abstracts/colors' as c;
+@use '../abstracts/fonts' as f;
+@use '../base/mixins' as m;
 
 .feature_container {
   background-color: c.$color-black;

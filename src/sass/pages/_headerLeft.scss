@@ -1,18 +1,10 @@
 @use '../abstracts/colors' as c;
 @use '../abstracts/fonts' as f;
+@use '../base/mixins' as m;
 /* Slider Header Left Start*/
 .container-left {
-  grid-column: full-start / col-end 6;
-  background-color: c.$color-primary;
   position: relative;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  /* IN THE END */
+  grid-column: full-start / col-end 6;
 }
 
 .slide {
@@ -21,157 +13,141 @@
   width: 100%;
   height: 100%;
   display: grid;
-  border: 3px solid c.$color-primary;
-  display: grid;
-  grid-template-columns: minmax(6rem, 1fr) repeat(6, minmax(min-content, 14rem)) minmax(6rem, 1fr);
-  grid-template-rows:  repeat(8, 1fr);
-  justify-content: start;
+  grid-template-columns: 1fr repeat(6, minmax(12rem, 1fr)) 1fr;
+  grid-template-rows:  repeat(5, minmax(6rem, 1fr));
+  justify-content: center;
   align-items: center;
-  align-content: start;
-  column-gap: 1rem;
-  /*THIScreatestheanimation!*/
-  
+  align-content: center;
+  border: 3px solid c.$color-primary;
   transition: transform 3.5s;
-  
+} 
 
-.logo-container {
+.slide-theme {
+  grid-column: 2 / -2;
+  grid-row: 1 / -1;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows:1fr repeat(3, min-content) 1fr;
+  grid-row-gap: 1.5rem;
+  min-height: 100%;
+  width: 100%;
+ 
+
+  .logo-container {
     position: relative;
-    grid-column: 4/6;
-    grid-row: 1/2;
-    top: 1rem;
     display: grid;
+    min-height: min-content;
     width: 100%;
-    height: min-content;
-    justify-content: center;
+    justify-self: center;
     align-items: center;
     align-content: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    z-index: 1000;
-      
-   img {
-      max-height: 8rem;
+    margin-top: 1rem;
+    margin-bottom: auto;
+
+    img {
+      height: 10rem;
       width: 100%;
+      justify-self: center;
     }
   }
 
-  .slide-theme {
-    position: relative;
-    grid-column: 2/-2;
-    grid-row: 2/ 7;
+  .shop-name {
+    grid-row: 2 / 3;
     display: grid;
-    justify-content: start; 
-    align-items: center;
-    align-content: start;
-    grid-template-columns: minmax(14rem, min-content);
-    grid-template-rows:1fr repeat(3, min-content) 1fr;
-    margin-left: 2rem;
-    width: 100%;
-    height: min-content;
+    min-height: min-content;
+    min-width: 100%;
+    justify-self: start;
 
-
-    .theme-logo {
-      grid-column: 1/3;
-      grid-row: 1/3;
-      display: inline-block;
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      left: 3rem;
-      height: min-content;
-      width: 100%;
-
-      h1 {
-       color: c.$color-text-linen;
-       font-size: f.$font-size-xl *1.6;
-       font-family: f.$font-headline;
-       font-weight: f.$font-weight-light;
-       letter-spacing: 5px;
-       padding: 1rem;
-      }
+    h1 {
+      font-size: f.$font-size-xl *1.6;
+      font-family: f.$font-headline;
+      color: c.$color-alt-white;
+      letter-spacing: f.$letter-space-headline;
+      font-weight: f.$font-weight-light;
     }
 
-    .theme-icon {
-      grid-column: 1/2;
-      grid-row: 3/4;
-      display: block;
-      display: grid;
-      justify-content: start;
-      align-items: center;
-      align-content: start;
-      padding-left: 1rem;
-      height: min-content;
+  }
+
+  .theme-caption {
+    grid-row: 3 / 4;
+    display: grid;
+    margin-bottom: auto;
+    min-height: min-content;
+    width: 100%;
+    justify-self: start;
+    align-content: center;
+
+  h2 {
+      font-family: f.$font-primary;
+      color: c.$color-alt-white;
+      font-size: f.$font-size-xl *1.6;
+      letter-spacing: f.$letter-space-headline-sans;
+      font-weight: f.$font-weight-normal;
+    }
+  }
+
+  .theme-link {
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: repeat(2, min-content minmax(12rem, 1fr));
+    width: 100%;
+    height: 100%;
+
+    .icon-container {
+      max-height: min-content;
       width: 100%;
+      padding: 1rem;
 
       img {
-        max-height: 8rem;
-        width: 100%;
+        height: 9rem;
+        width: auto;
       }
     }
 
-    .scissor-icon img {
-      width: 100%;
-      height: 8rem;
+    button {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2rem;
       padding: 1rem;
-    }
-
-    .theme-caption {
+      background-color: c.$color-button-primary;
+      border: solid 1px c.$color-white;
+      box-shadow: 1px 5px 7px c.$color-grey;
       display: inline-block;
-      grid-column: 2/5;
-      grid-row: 2/4;
-      display: grid;
-      justify-content: start;
-      align-items: center;
-      align-content: start;
-      padding-left: 0;
       height: min-content;
-      width: 100%;
+      width: max-content;
+      text-align: center;
 
-      h1 {
-        font-family: f.$font-primary;
-        font-size: f.$font-size-xl*1.5;
-        font-weight: f.$font-weight-normal;
-        color: c.$color-text-linen;
-      }
-    }
 
-    .theme-btn {
-      grid-column: 1/3;
-      grid-row: 5/6;
-      margin-top: 4rem;
-      display: inline-block;
-      display: grid;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      margin-left: 1rem;
-      padding: .8rem;
-      border: solid c.$color-text-linen 2px;
-      background-color: c.$color-button-orange;
-      height: min-content;
-      max-width: 25rem;
 
-      .btn-text {
-        font-family: f.$font-primary;
-        font-size: f.$font-size-large *1.25;
-        font-weight: f.$font-weight-normal-plus;
-        color: c.$color-text-linen;
+      a {
+        color: c.$color-primary;
         list-style: none;
         text-decoration: none;
+        font-family: f.$font-primary;
+        font-weight: f.$font-weight-bold;
+        font-size: f.$font-size-large;
+        letter-spacing: f.$letter-space-headline-sans;
       }
     }
 
-   
+    .icon-container {
+      display: block;
+      max-height: min-content;
+      padding: 1rem;
+      margin-left: 0;
+      margin-top: auto;
+      margin-bottom: auto;
 
-    .btn-text:hover {
-      color: c.$color-text-linen;
-      font-size: f.$font-size-xl *1.255;
-      font-weight: f.$font-weight-bold;
+      img {
+        height: 8rem;
+        width: auto;
+      }
     }
 
-  }
 
+ 
+  }
 }
 
 .control {
@@ -204,6 +180,14 @@
 .right-arrow {
   right: 0;
 }
+
+.chevron {
+  height: 3rem;
+  width: auto;
+}
+
+
+
 
 .slide.slide-1 {
   background: rgb(0, 0, 0);
@@ -304,22 +288,6 @@
   opacity: 0.4;
   cursor: pointer;
 }
-
-.chevron {
-  height: 3rem;
-  width: auto;
-}
-
-.slider__btn--left {
-  left: 6%;
-  transform: translate(-50%, -50%);
-}
-
-.slider__btn--right {
-  right: 6%;
-  transform: translate(50%, -50%);
-}
-
 
 .play-pause {
   cursor: pointer;

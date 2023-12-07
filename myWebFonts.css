@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * @license
  * MyFonts Webfont Build ID 4291287, 2022-01-10T04:41:28-0500
@@ -25,48 +24,20 @@
  * 
  * © 2022 MyFonts Inc
 */
+
+
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/417ad7");
+  
 @font-face {
-  font-family: "fontDisplay";
-  src: url("./fonts/fontDisplay/font.woff2") format("woff2"), url("./fontDisplay/font.woff") format("woff");
+  font-family: "LeMoresCollectionScript-Reg";
+  src: url('webFonts/LeMoresCollectionScriptReg/font.woff2') format('woff2'), url('webFonts/LeMoresCollectionScriptReg/font.woff') format('woff');
 }
 @font-face {
-  font-family: "fontHeadline";
-  src: url("./fonts/fontHeadline/font.woff2") format("woff2"), url("./fontHeadline/font.woff") format("woff");
+  font-family: "LEMORESCOLLECTIONSERIF-Reg";
+  src: url('webFonts/LEMORESCOLLECTIONSERIFReg/font.woff2') format('woff2'), url('webFonts/LEMORESCOLLECTIONSERIFReg/font.woff') format('woff');
 }
 @font-face {
-  font-family: "fontScript";
-  src: url("./fonts/fontScript/font.woff2") format("woff2"), url("./fontScript/font.woff") format("woff");
+  font-family: "BettermindSignature";
+  src: url('webFonts/BettermindSignature/font.woff2') format('woff2'), url('webFonts/BettermindSignature/font.woff') format('woff');
 }
-/*# sourceMappingURL=MyFontsWebfontsKit.css.map */
-
-/*Fonts*/
-$font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'Courier Prime', monospace;
-$font-headline: 'fontHeadline';
-$font-display: 'fontDisplay';
-$font-script: 'fontScript';
-
-/*Font Sizes*/
-$font-size-small: .8rem;
-$font-size-medium: 1rem;
-$font-size-normal: 1.1rem;
-$font-size-normal-plus: 1.5rem;
-$font-size-large: 1.8rem;
-$font-size-xl: 2rem;
-
-/*Font Weights*/
-$font-weight-light: 100;
-$font-weight-normal: 300;
-$font-weight-normal-plus: 400;
-$font-weight-bold: 500;
-$font-weight-heavy: 700;
-
-/*Font Spacing*/
-$letter-space-headline: 10px;
-$letter-space-headline-sans: 5px;
-$letter-space-stretch: 8.25px;
-
-
-
