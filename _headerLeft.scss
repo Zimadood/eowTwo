@@ -1,6 +1,6 @@
 @use '../abstracts/colors' as c;
 @use '../abstracts/fonts' as f;
-@use '../base/mixins' as *;
+@use '../base/mixins' as m;
 /* Slider Header Left Start*/
 .container-left {
   position: relative;
@@ -28,15 +28,14 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr min-content minmax(6rem, min-content) min-content 1fr;
-  grid-template-columns: minmax(min-content, max-content);
+  grid-template-rows:1fr repeat(3, min-content) 1fr;
   grid-row-gap: 1.5rem;
   min-height: 100%;
   width: 100%;
  
 
   .logo-container {
-    position: absolute;
+    position: relative;
     display: grid;
     min-height: min-content;
     width: 100%;
@@ -65,7 +64,7 @@
       font-family: f.$font-headline;
       color: c.$color-alt-white;
       letter-spacing: f.$letter-space-headline;
-      font-weight: f.$font-weight-bold;
+      font-weight: f.$font-weight-light;
     }
 
   }
@@ -82,7 +81,7 @@
   h2 {
       font-family: f.$font-primary;
       color: c.$color-alt-white;
-      font-size: f.$font-size-xl *1.75;
+      font-size: f.$font-size-xl *1.6;
       letter-spacing: f.$letter-space-headline-sans;
       font-weight: f.$font-weight-normal;
     }
@@ -101,7 +100,7 @@
       padding: 1rem;
 
       img {
-        height: 8rem;
+        height: 9rem;
         width: auto;
       }
     }
@@ -112,27 +111,23 @@
       margin-left: 2rem;
       padding: 1rem;
       background-color: c.$color-button-primary;
-      border: solid 1px c.$color-alt-white;
+      border: solid 1px c.$color-white;
       box-shadow: 1px 5px 7px c.$color-grey;
       display: inline-block;
       height: min-content;
       width: max-content;
       text-align: center;
-      
+
+
+
       a {
-        color: c.$color-alt-white;
+        color: c.$color-text-linen;
         list-style: none;
         text-decoration: none;
         font-family: f.$font-primary;
         font-weight: f.$font-weight-bold;
         font-size: f.$font-size-xl;
         letter-spacing: f.$letter-space-headline-sans;
-      }
-
-      i {
-        color: c.$color-alt-white;
-        font-size: f.$font-size-xl;
-        margin-right: .75rem;
       }
     }
 
@@ -145,15 +140,13 @@
       margin-bottom: auto;
 
       img {
-        max-height: 7rem;
-        min-width: 100%;
-      }
-
-      .telephone-icon {
-        max-height: 5rem;
-        min-width: 100%;
+        height: 8rem;
+        width: auto;
       }
     }
+
+
+ 
   }
 }
 
@@ -314,3 +307,4 @@
 
 /*Slider Caption Contents*/
 
+  

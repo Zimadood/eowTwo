@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+@forward '../base/mixins';
+
 /**
  * @license
  * MyFonts Webfont Build ID 4291287, 2022-01-10T04:41:28-0500
@@ -39,6 +42,7 @@
   font-family: "fontScript";
   src: url("./fonts/fontScript/font.woff2") format("woff2"), url("./fontScript/font.woff") format("woff");
 }
+
 /*# sourceMappingURL=MyFontsWebfontsKit.css.map */
 
 /*Fonts*/
@@ -60,13 +64,33 @@ $font-size-xl: 2rem;
 $font-weight-light: 100;
 $font-weight-normal: 300;
 $font-weight-normal-plus: 400;
-$font-weight-bold: 500;
+$font-weight-bold: 600;
 $font-weight-heavy: 700;
 
 /*Font Spacing*/
-$letter-space-headline: 10px;
+$letter-space-headline: 9px;
 $letter-space-headline-sans: 5px;
 $letter-space-stretch: 8.25px;
+
+/*Media Query Font-sizes change to em*/
+$font-size-phone-sm: 44%;         /*1 em = 16px / 7px = 43.75%*/
+
+$font-size-phone-md: 45%;         /*1 em = 16px / 7.25px = 43.75%*/
+
+$font-size-tab-portrait: 47.5%;   /*1 em = 16px / 7.6px = 47.5%*/
+
+$font-size-tab-landscape: 50%;    /*1 em = 16px / 8px = 46.875%*/
+
+$font-size-laptop: 51.5625%;      /*1 em = 16px /  8.25px 54.6875%*/
+
+$font-size-desk: 62.25%;          /*1 em = 16px / 10px 53.125%*/
+
+$font-size-desk-lg: 68.75%;     /*1 em = 16px / 11px 53.125%*/
+
+
+
+
+
 
 
 

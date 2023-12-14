@@ -6,3 +6,78 @@ Below 1600px the content static starts to break out the right side.
 Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting slightly.
 
 */
+
+
+/*
+Define variables for breakpoints
+
+$phone-breakpoint: 20em; = 320px
+$tablet-portrait-breakpoint: 40em; = 640px
+$tablet-landscape-breakpoint: 50em; = 800px
+$laptop-breakpoint: 64em; = 1024px
+$desktop-breakpoint: 80em; = 1280px
+
+*/
+
+/*From mixin file*/
+/*Define variables for breakpoints*/
+$breakpoint-phone-sm: 17.5em; /*280px*/
+$breakpoint-phone-md: 26.25em; /*420px*/
+$breakpoint-tablet-portrait: 40em; /*640px*/
+$breakpoint-tablet-landscape: 45em; /*720px*/
+$breakpoint-laptop: 64em; /*1024px*/
+$breakpoint-desktop: 81.25em; /*1300px*/
+$breakpoint-desktop-lg: 112.5em; /*1800px*/
+
+
+// Use mixins to apply breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-sm {
+    @media only screen and (min-width: $breakpoint-phone-sm) {
+      @content
+    };
+  }
+  @if $breakpoint == phone-md {
+    @media only screen and (min-width: $breakpoint-phone-md) {
+      @content
+    };
+  }
+
+ @if $breakpoint == tab-portrait {
+    @media only screen and (min-width: $breakpoint-tablet-portrait) {
+      @content
+    };
+  }
+
+  @if $breakpoint == tab-landscape {
+    @media only screen and (min-width: $breakpoint-tablet-landscape)  {
+      @content
+    };
+  }
+
+  @if $breakpoint == laptop {
+    @media only screen and (min-width: $breakpoint-laptop)  {
+      @content
+    };
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $breakpoint-desktop) {
+      @content
+    };
+  }
+  @if $breakpoint == desktop-lg {
+    @media only screen and (min-width: $breakpoint-desktop-lg) {
+      @content
+    };
+  }
+}
+  
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 @use '../abstracts/colors' as c;
 @use '../abstracts/fonts' as f;
-@use '../base/mixins' as m;
+@use '../base/mixins' as *;
 
 /*Checked OK*/
 .sidebar {
@@ -8,13 +8,18 @@
   grid-column: 1/2;
   grid-row-start: 1;
   grid-row-end: -1;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   background-color: c.$color-secondary;
   display: grid;
   justify-content: center;
   align-items: center;
   align-content: center;
   height: 100%;
-  width: 8rem;
+  width: 100%;
+
+  
 }
 
 /*Checked OK*/
@@ -24,10 +29,15 @@
   height: 100%;
   width: 8rem;
   border: solid 3.5px c.$color-primary;
-  outline:2px solid c.$color-primary;
+  outline: 2px solid c.$color-primary;
   outline-offset: -8px;
   padding: 1rem;
   margin: 0;
+
+ @include respond(laptop) {
+    border: solid 2.5px c.$color-primary;
+    outline: 1.5px solid c.$color-primary;
+  }
 }
 
 /*inside sidebar parent*/
@@ -39,12 +49,12 @@
 
 /*Checked HAPPY With this HAMBURGER code*/
 .hamburger-menu {
-  width: 55px;
-  height: 55px;
+  min-width: 5.5rem;
+  min-height: 5.5rem;
   background-color: c.$color-primary;
   position: fixed;
-  top: 2.5rem;
-  left: 1.4rem;
+  top: 1.6rem;
+  margin-left: 0.5rem;
   outline: 2px solid c.$color-secondary;
   outline-offset: -5px;
   border-radius: 50%;
@@ -55,12 +65,38 @@
   align-items: center;
   z-index: 9999;
   transition: all 0.5s;
-  -webkit-transition: all 0.5s; 
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
-  
+
+
+  @include respond(phone-sm){
+    width: 40px;
+    height: 40px;
+    left: 0.5rem;
+  }
+
+  @include respond(phone-md){
+    left: 0.7rem;
+  }
+
+  @include respond(tab-portrait){
+    left: 0.7rem;
+  }
+
+  @include respond(tab-landscape){
+    left: 0.7rem;
+  }
+
+  @include respond(laptop){
+    width: 47px;
+    height: 47px;
+    left: 0.7rem;
+  }
 }
+
+
 
 .change .hamburger-menu {
   background-color: c.$color-primary;
@@ -90,6 +126,7 @@
   transform: rotate(40deg) translateY(5px);
   background-color: c.$color-secondary;
 }
+
 /*Checked HAPPY With this HAMBURGER code*/
 
 /*Navbar Contents incl Links Position Animation and Styles*/
@@ -99,7 +136,7 @@
 
 .change .nav-content {
   display: grid;
-  grid-template-columns: minmax(min-content,max-content);
+  grid-template-columns: minmax(min-content, max-content);
   grid-template-rows: repeat(7, 1fr);
   justify-content: start;
   align-items: start;
@@ -113,7 +150,7 @@
   max-width: min-content;
   position: fixed;
   border: solid 3.5px c.$color-primary;
-  outline:2px solid c.$color-primary;
+  outline: 2px solid c.$color-primary;
   outline-offset: -8px;
   padding: 1rem;
   margin: 0;
@@ -129,15 +166,13 @@
   -o-transform: translateX(0);
 }
 
-
-
 .nav-list {
   grid-column: 1/ 3;
   grid-row: 1 / 7;
   position: relative;
   display: grid;
   grid-template-columns: minmax(16rem, min-content);
-  grid-template-rows:1fr minmax(min-content, max-content) 1fr;
+  grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
   justify-content: start;
   align-items: start;
   align-content: start;
@@ -163,7 +198,7 @@
   width: 100%;
 }
 
-.nav-list li  a {
+.nav-list li a {
   color: c.$color-primary;
   font-family: f.$font-headline;
   font-size: f.$font-size-normal *1.2;
@@ -182,18 +217,23 @@
 .nav-list .nav-item-1 {
   grid-row: 2 / 3;
 }
+
 .nav-list .nav-item-2 {
   grid-row: 3 / 4;
 }
+
 .nav-list .nav-item-3 {
   grid-row: 4 / 5;
 }
+
 .nav-list .nav-item-4 {
   grid-row: 5 / 6;
 }
+
 .nav-list .nav-item-5 {
   grid-row: 6 / 7;
 }
+
 .nav-list .nav-item-6 {
   grid-row: 7 / 8;
 }
@@ -209,7 +249,7 @@
   align-items: center;
   align-content: center;
   width: 100%;
-  height:100%;
+  height: 100%;
   padding: 1rem 1rem 1rem 0;
   margin: 0;
   z-index: 10400;
@@ -228,13 +268,14 @@
 .nav-item:hover .nav-link {
   background-color: c.$color-primary;
   color: c.$color-secondary;
+  font-size: f.$font-size-normal *1.35;
 }
 
 .nav-link::before,
 .nav-link::after {
   content: "";
   width: 0;
-  height: .2rem;
+  height: .15rem;
   background-color: c.$color-primary;
   display: block;
   transition: width .3s cubic-bezier(.55, 0, .98, .54), background-color .5s .3s;
@@ -248,7 +289,7 @@
 .nav-item:hover .nav-link::after {
   width: 100%;
   background-color: c.$color-secondary;
-  z-index:1000;
+  z-index: 1000;
 }
 
 .nav-item:first-child {

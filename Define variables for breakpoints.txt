@@ -1,0 +1,42 @@
+// Define variables for breakpoints
+$phone-breakpoint: 20em;
+$tablet-portrait-breakpoint: 40em;
+$tablet-landscape-breakpoint: 50em;
+$laptop-breakpoint: 64em;
+$desktop-breakpoint: 80em;
+
+
+// Use mixins to apply breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: $phone-breakpoint) {
+      @content
+    };
+  }
+  @if $breakpoint == phone-med {
+    @media (min-width: $phone-breakpoint) and (max-width: $tablet-portrait-breakpoint) {
+      @content
+    };
+  }
+  
+  @if $breakpoint == tab-portrait {
+    @media (min-width: $tablet-portrait-breakpoint) and (max-width: $tablet-landscape-breakpoint) {
+      @content
+    };
+  }
+  @if $breakpoint == tab-ladscape {
+    @media (min-width: $tablet-landscape-breakpoint) and (max-width: $laptop-breakpoint) {
+      @content
+    };
+  }
+  @if $breakpoint == laptop {
+    @media (min-width: $laptop-breakpoint) and (max-width: $desktop-breakpoint) {
+      @content
+    };
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: $desktop-breakpoint) {
+      @content
+    };
+  }
+}

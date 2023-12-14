@@ -1,6 +1,6 @@
 @use '../abstracts/colors' as c;
 @use '../abstracts/fonts' as f;
-@use '../base/mixins' as m;
+@use '../base/mixins' as *;
 
 .container-right {
     background-color: c.$color-primary;
@@ -46,17 +46,19 @@
         display: grid;
         align-items: center;
         max-height: min-content;
-        width: auto;
+        width: 100%;
         z-index: 1000;
-    
+
         img {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
             margin-top: 0;
             margin-left: auto;
             margin-right: auto;
-            height: 22rem;
-            width: 100%;
+            height: 20rem;
+            max-width: 100%;
+
+        
         }
     }
 
@@ -70,10 +72,9 @@
         background-color: c.$color-primary;
         width: 100%;
         height: min-content;
-       
 
-       i {
-            font-size: f.$font-size-large;
+
+        i {
             margin-right: 1rem;
             color: c.$color-secondary;
         }
@@ -84,9 +85,8 @@
             color: c.$color-secondary;
             letter-spacing: 2px;
         }
+}
 
-      
-    }
     .header-btn-two {
         display: flex;
         justify-content: center;
@@ -95,12 +95,11 @@
         padding: 1rem;
         border: solid 1px c.$color-secondary;
         background-color: c.$color-primary;
-        width: min-content;
+        width: 100%;
         height: min-content;
-       
 
-       i {
-            font-size: f.$font-size-large;
+
+        i {
             color: c.$color-secondary;
             margin-right: 1rem;
             margin-top: .4rem;
@@ -113,11 +112,5 @@
             color: c.$color-secondary;
             letter-spacing: 2px;
         }
-
-      
-    }
-  
+    }    
 }
-
-
-

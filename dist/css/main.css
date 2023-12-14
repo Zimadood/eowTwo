@@ -28,10 +28,38 @@
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/417ad7");
 /* Feature Colors*/
+/*Tints of main theme colors*/
 /*Standard Colors*/
 /*Text Standard Colors*/
 /*Alternative Standard Text Colors*/
 /* 5 Shades of Grey Colors*/
+/*
+Tuesday 5th December 2023
+Media Queries regarding the .change ,navbar state
+Below 1600px the content static starts to break out the right side.
+
+Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting slightly.
+
+*/
+/*
+Define variables for breakpoints
+
+$phone-breakpoint: 20em; = 320px
+$tablet-portrait-breakpoint: 40em; = 640px
+$tablet-landscape-breakpoint: 50em; = 800px
+$laptop-breakpoint: 64em; = 1024px
+$desktop-breakpoint: 80em; = 1280px
+
+*/
+/*From mixin file*/
+/*Define variables for breakpoints*/
+/*280px*/
+/*420px*/
+/*640px*/
+/*720px*/
+/*1024px*/
+/*1300px*/
+/*1800px*/
 @font-face {
   font-family: "fontDisplay";
   src: url("./fonts/fontDisplay/font.woff2") format("woff2"), url("./fontDisplay/font.woff") format("woff");
@@ -49,13 +77,71 @@
 /*Font Sizes*/
 /*Font Weights*/
 /*Font Spacing*/
+/*Media Query Font-sizes change to em*/
+/*1 em = 16px / 7px = 43.75%*/
+/*1 em = 16px / 7.25px = 43.75%*/
+/*1 em = 16px / 7.6px = 47.5%*/
+/*1 em = 16px / 8px = 46.875%*/
+/*1 em = 16px /  8.25px 54.6875%*/
+/*1 em = 16px / 10px 53.125%*/
+/*1 em = 16px / 11px 53.125%*/
 *,
 * :before,
 * :after {
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -67,7 +153,11 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-size-adjust: none;
 }
 
-footer, header, nav, section, main {
+footer,
+header,
+nav,
+section,
+main {
   display: block;
 }
 
@@ -75,15 +165,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -104,19 +199,46 @@ body {
 
 html {
   overflow-y: scroll;
-  font-size: 62.5%;
+  font-size: 62.5%; /*1rem = 10px default font size global*/
   font-weight: 400;
   letter-spacing: 2px;
 }
+@media only screen and (min-width: 17.5em) {
+  html {
+    font-size: 44%;
+  }
+}
+@media only screen and (min-width: 26.25em) {
+  html {
+    font-size: 45%;
+  }
+}
+@media only screen and (min-width: 40em) {
+  html {
+    font-size: 47.5%;
+  }
+}
+@media only screen and (min-width: 45em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 64em) {
+  html {
+    font-size: 51.5625%;
+  }
+}
+@media only screen and (min-width: 81.25em) {
+  html {
+    font-size: 62.25%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 68.75%;
+  }
+}
 
-/*
-Tuesday 5th December 2023
-Media Queries regarding the .change ,navbar state
-Below 1600px the content static starts to break out the right side.
-
-Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting slightly.
-
-*/
 #home {
   display: grid;
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
@@ -127,13 +249,16 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   grid-column: 1/2;
   grid-row-start: 1;
   grid-row-end: -1;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   background-color: #ccc67c;
   display: grid;
   justify-content: center;
   align-items: center;
   align-content: center;
   height: 100%;
-  width: 8rem;
+  width: 100%;
 }
 
 /*Checked OK*/
@@ -148,6 +273,12 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   padding: 1rem;
   margin: 0;
 }
+@media only screen and (min-width: 64em) {
+  .sidebar-border {
+    border: solid 2.5px #000010;
+    outline: 1.5px solid #000010;
+  }
+}
 
 /*inside sidebar parent*/
 .navbar {
@@ -158,12 +289,12 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
 
 /*Checked HAPPY With this HAMBURGER code*/
 .hamburger-menu {
-  width: 55px;
-  height: 55px;
+  min-width: 5.5rem;
+  min-height: 5.5rem;
   background-color: #000010;
   position: fixed;
-  top: 2.5rem;
-  left: 1.4rem;
+  top: 1.6rem;
+  margin-left: 0.5rem;
   outline: 2px solid #ccc67c;
   outline-offset: -5px;
   border-radius: 50%;
@@ -178,6 +309,35 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
+}
+@media only screen and (min-width: 17.5em) {
+  .hamburger-menu {
+    width: 40px;
+    height: 40px;
+    left: 0.5rem;
+  }
+}
+@media only screen and (min-width: 26.25em) {
+  .hamburger-menu {
+    left: 0.7rem;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .hamburger-menu {
+    left: 0.7rem;
+  }
+}
+@media only screen and (min-width: 45em) {
+  .hamburger-menu {
+    left: 0.7rem;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .hamburger-menu {
+    width: 47px;
+    height: 47px;
+    left: 0.7rem;
+  }
 }
 
 .change .hamburger-menu {
@@ -343,13 +503,14 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
 .nav-item:hover .nav-link {
   background-color: #000010;
   color: #ccc67c;
+  font-size: 1.485rem;
 }
 
 .nav-link::before,
 .nav-link::after {
   content: "";
   width: 0;
-  height: 0.2rem;
+  height: 0.15rem;
   background-color: #000010;
   display: block;
   transition: width 0.3s cubic-bezier(0.55, 0, 0.98, 0.54), background-color 0.5s 0.3s;
@@ -397,13 +558,14 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr repeat(3, min-content) 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) min-content 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   min-height: 100%;
   width: 100%;
 }
 .slide-theme .logo-container {
-  position: relative;
+  position: absolute;
   display: grid;
   min-height: min-content;
   width: 100%;
@@ -428,9 +590,9 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
 .slide-theme .shop-name h1 {
   font-size: 3.2rem;
   font-family: "fontHeadline";
-  color: #f2f3f4;
-  letter-spacing: 10px;
-  font-weight: 100;
+  color: #f4f8f3;
+  letter-spacing: 9px;
+  font-weight: 600;
 }
 .slide-theme .theme-caption {
   grid-row: 3/4;
@@ -443,8 +605,8 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
 }
 .slide-theme .theme-caption h2 {
   font-family: "Montserrat", sans-serif;
-  color: #f2f3f4;
-  font-size: 3.2rem;
+  color: #f4f8f3;
+  font-size: 3.5rem;
   letter-spacing: 5px;
   font-weight: 300;
 }
@@ -461,7 +623,7 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   padding: 1rem;
 }
 .slide-theme .theme-link .icon-container img {
-  height: 9rem;
+  height: 8rem;
   width: auto;
 }
 .slide-theme .theme-link button {
@@ -469,8 +631,8 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   margin-bottom: auto;
   margin-left: 2rem;
   padding: 1rem;
-  background-color: #ff5e00;
-  border: solid 1px #ffffff;
+  background-color: #f87021;
+  border: solid 1px #f4f8f3;
   box-shadow: 1px 5px 7px #393939;
   display: inline-block;
   height: min-content;
@@ -478,13 +640,18 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   text-align: center;
 }
 .slide-theme .theme-link button a {
-  color: #000010;
+  color: #f4f8f3;
   list-style: none;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 600;
+  font-size: 2rem;
   letter-spacing: 5px;
+}
+.slide-theme .theme-link button i {
+  color: #f4f8f3;
+  font-size: 2rem;
+  margin-right: 0.75rem;
 }
 .slide-theme .theme-link .icon-container {
   display: block;
@@ -495,8 +662,12 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   margin-bottom: auto;
 }
 .slide-theme .theme-link .icon-container img {
-  height: 8rem;
-  width: auto;
+  max-height: 7rem;
+  min-width: 100%;
+}
+.slide-theme .theme-link .icon-container .telephone-icon {
+  max-height: 5rem;
+  min-width: 100%;
 }
 
 .control {
@@ -647,7 +818,7 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   display: grid;
   align-items: center;
   max-height: min-content;
-  width: auto;
+  width: 100%;
   z-index: 1000;
 }
 .brand-container .logo img {
@@ -656,8 +827,8 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  height: 22rem;
-  width: 100%;
+  height: 20rem;
+  max-width: 100%;
 }
 .brand-container .header-btn-one {
   display: flex;
@@ -671,7 +842,6 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   height: min-content;
 }
 .brand-container .header-btn-one i {
-  font-size: 1.8rem;
   margin-right: 1rem;
   color: #ccc67c;
 }
@@ -689,11 +859,10 @@ Razer Laptop 1280 x 720px viewport the slide theme content will need adjusting s
   padding: 1rem;
   border: solid 1px #ccc67c;
   background-color: #000010;
-  width: min-content;
+  width: 100%;
   height: min-content;
 }
 .brand-container .header-btn-two i {
-  font-size: 1.8rem;
   color: #ccc67c;
   margin-right: 1rem;
   margin-top: 0.4rem;
